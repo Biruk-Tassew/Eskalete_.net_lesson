@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "iXGoAy2E77m2T3ew9bDy1/lWu9Xk/pfS+JfdywzWp/AVCCkTrLOmx8dwKIe+8jWL6tUH2GDKSUmMgj+WTh56Kg==",
+  "dgSpecHash": "9gxuZIB83veuhn3oPYn8yuzZhSjX914LwnVyQ3QSV21KS5oFgX85KVWm4t2MqBPppLnIhoMHD3H9woJiEYW4rQ==",
   "success": true,
   "projectFilePath": "/home/biruk/Desktop/Classes/A2SV/Internship/net/lesson/HR.LeaveManagment.csproj",
   "expectedPackageFiles": [
     "/home/biruk/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
     "/home/biruk/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "/home/biruk/.nuget/packages/fluentvalidation/11.5.2/fluentvalidation.11.5.2.nupkg.sha512",
+    "/home/biruk/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.5.2/fluentvalidation.dependencyinjectionextensions.11.5.2.nupkg.sha512",
     "/home/biruk/.nuget/packages/mediatr/11.0.0/mediatr.11.0.0.nupkg.sha512",
     "/home/biruk/.nuget/packages/mediatr.contracts/1.0.1/mediatr.contracts.1.0.1.nupkg.sha512",
     "/home/biruk/.nuget/packages/mediatr.extensions.microsoft.dependencyinjection/11.1.0/mediatr.extensions.microsoft.dependencyinjection.11.1.0.nupkg.sha512",

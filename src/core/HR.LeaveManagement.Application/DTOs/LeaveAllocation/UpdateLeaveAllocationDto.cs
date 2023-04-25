@@ -3,7 +3,7 @@ using HR.LeaveManagement.Application.DTOs.Common;
 using HR.LeaveManagement.Application.DTOs.LeaveType;
 
 namespace HR.LeaveManagement.Application.DTOs.LeaveAllocation;
-public class UpdateLeaveAllocationDto : BaseDto
+public class UpdateLeaveAllocationDto : BaseDto, ILeaveAllocationDto
 {
     public LeaveTypeDto? LeaveType {get; set;}
     public int LeaveTypeId {get; set;}
