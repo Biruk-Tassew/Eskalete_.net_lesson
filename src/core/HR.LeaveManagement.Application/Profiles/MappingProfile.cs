@@ -11,10 +11,27 @@ public class MappingProfile : Profile
 {
     public MappingProfile()
     {
+        #region LeaveReques
         CreateMap<LeaveRequest, LeaveRequestDto>().ReverseMap();
         CreateMap<LeaveRequest, LeaveRequestListDto>().ReverseMap();
+        CreateMap<LeaveRequest, CreateLeaveRequestDto>().ReverseMap();
+        CreateMap<LeaveRequest, UpdateLeaveRequestDto>().ReverseMap();
+        CreateMap<LeaveRequest, DeleteLeaveRequestDto>().ReverseMap();
+        #endregion
+
+        #region LeaveAllocation
         CreateMap<LeaveAllocation, LeaveAllocationDto>().ReverseMap();
+        CreateMap<LeaveAllocation, CreateLeaveAllocationDto>().ReverseMap();
+        CreateMap<LeaveAllocation, UpdateLeaveAllocationDto>().ReverseMap();
+        CreateMap<LeaveAllocation, DeleteLeaveAllocationDto>().ReverseMap();
+        #endregion
+
+        #region  LeaveType
         CreateMap<LeaveType, LeaveTypeDto>().ReverseMap();
+        CreateMap<LeaveType, CreateLeaveTypeDto>().ReverseMap();
+        CreateMap<LeaveType, UpdateLeaveTypeDto>().ReverseMap();
+        CreateMap<LeaveType, DeleteLeaveTypeDto>().ReverseMap();
+        #endregion
 
     }
 }
