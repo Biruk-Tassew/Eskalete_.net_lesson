@@ -18,7 +18,7 @@ public class CreateLeaveRequestCommandHandler : IRequestHandler<CreateLeaveReque
     {
         var leaveRequest = _mapper.Map<LeaveRequest>(request.LeaveRequestDto);
         leaveRequest = await _leaveRequestRepository.Add(leaveRequest);
-
+        
         return leaveRequest.Id;
     }
 }
