@@ -1,15 +1,21 @@
-﻿
-using System.Reflection;
+﻿using HR.LeaveManagement.Application.Profiles;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Collections.Generic;
+using System.Reflection;
+using System.Text;
 
-namespace HR.LeaveManagement.Application;
-public static class ApplicationServicesRegistration 
+namespace HR.LeaveManagement.Application
 {
-    public static IServiceCollection ConfigureApplicationServices(this IServiceCollection services)
+    public static class ApplicationServicesRegistration
     {
-        services.AddAutoMapper(Assembly.GetExecutingAssembly());
-        services.AddMediatR(Assembly.GetExecutingAssembly());
-        return services;
+        public static IServiceCollection ConfigureApplicationServices(this IServiceCollection services)
+        {
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            services.AddMediatR(Assembly.GetExecutingAssembly());
+
+            return services;
+        }
     }
 }

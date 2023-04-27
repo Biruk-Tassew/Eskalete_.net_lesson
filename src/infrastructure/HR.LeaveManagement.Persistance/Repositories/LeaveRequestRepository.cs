@@ -1,34 +1,52 @@
-using HR.LeaveManagement.Application.Contracts.Persistance;
+﻿using HR.LeaveManagement.Application.Contracts.Persistence;
 using HR.LeaveManagement.Domain;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace HR.LeaveManagement.Persistance.Repository;
-
-public class LeaveRequestRepository : GenericRepository<LeaveRequest>, ILeaveRequestRepository
+namespace HR.LeaveManagement.Persistence.Repositories
 {
-    private readonly LeaveManagementDbContext _dbContext;
-    public LeaveRequestRepository(LeaveManagementDbContext dbContext) : base(dbContext)
+    public class LeaveRequestRepository : GenericRepository<LeaveRequest>, ILeaveRequestRepository
     {
-        _dbContext = dbContext;
-    }
+        private readonly LeaveManagementDbContext _dbContext;
 
-    public async Task<List<LeaveRequest>> GetLeaveRequestsWithDetails()
-    {
-        return await _dbContext.LeaveRequests
-        .Include(q => q.LeaveType).ToListAsync();
-    }
+        public LeaveRequestRepository(LeaveManagementDbContext dbContext) : base(dbContext)
+        {
+            _dbContext = dbContext;
+        }
 
-    public async Task<LeaveRequest> GetLeaveRequestWithDetails(int id)
-    {
-        return await _dbContext.LeaveRequests
-        .Include(q => q.LeaveType)
-        .FirstOrDefaultAsync(q => q.Id == id);
-    }
+        public async Task ChangeApprovalStatus(LeaveRequest leaveRequest, bool? ApprovalStatus)
+        {
+            leaveRequest.Approved = ApprovalStatus;
+            _dbContext.Entry(leaveRequest).State = EntityState.Modified;
+        }
 
-    public async Task UpdateApprovalStatus(LeaveRequest leaveRequest, bool? approved)
-    {
-        leaveRequest.Approved = (bool)approved;
-        _dbContext.Entry(leaveRequest).State = EntityState.Modified;
-        await _dbContext.SaveChangesAsync();
+        public async Task<List<LeaveRequest>> GetLeaveRequestsWithDetails()
+        {
+            var leaveRequests = await _dbContext.LeaveRequests
+                .Include(q => q.LeaveType)
+                .ToListAsync();
+            return leaveRequests;
+        }
+
+        public async Task<List<LeaveRequest>> GetLeaveRequestsWithDetails(string userId)
+        {
+            var leaveRequests = await _dbContext.LeaveRequests.Where(q=> q.RequestingEmployeeId == userId)
+                .Include(q => q.LeaveType)
+                .ToListAsync();
+            return leaveRequests;
+        }
+
+        public async Task<LeaveRequest> GetLeaveRequestWithDetails(int id)
+        {
+            var leaveRequest = await _dbContext.LeaveRequests
+                .Include(q => q.LeaveType)
+                .FirstOrDefaultAsync(q => q.Id == id);
+
+            return leaveRequest;
+        }
     }
 }

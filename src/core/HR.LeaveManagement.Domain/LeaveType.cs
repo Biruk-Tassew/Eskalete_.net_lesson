@@ -1,10 +1,13 @@
-﻿using System;
-using HR.LeaveManagement.Domain.Common;
+﻿using HR.LeaveManagement.Domain.Common;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace HR.LeaveManagement.Domain;
-public class LeaveType : BaseDomainEntity
+namespace HR.LeaveManagement.Domain
 {
-    public string? Name {get; set;}
-    public string? DefaultDays {get; set;}
-    
+    public class LeaveType : BaseDomainEntity
+    {
+        public string Name { get; set; }
+        public int DefaultDays { get; set; }
+    }
 }

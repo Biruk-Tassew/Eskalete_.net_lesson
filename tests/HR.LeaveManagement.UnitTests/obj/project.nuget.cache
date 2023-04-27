@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "1XV4jicEB1xg5zmiRx8UMIrIYyevIoCk0ziUWy/OUBu30mmcqyWSt4ApRSxY/yPNAY81dbLcLWOKwrFRGRPeLg==",
+  "success": true,
+  "projectFilePath": "/home/biruk/Desktop/Classes/A2SV/Internship/net/lesson/tests/HR.LeaveManagement.UnitTests/HR.LeaveManagement.UnitTests.csproj",
+  "expectedPackageFiles": [
+    "/home/biruk/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
+    "/home/biruk/.nuget/packages/diffengine/11.3.0/diffengine.11.3.0.nupkg.sha512",
+    "/home/biruk/.nuget/packages/emptyfiles/4.4.0/emptyfiles.4.4.0.nupkg.sha512",
+    "/home/biruk/.nuget/packages/moq/4.18.4/moq.4.18.4.nupkg.sha512",
+    "/home/biruk/.nuget/packages/shouldly/4.2.1/shouldly.4.2.1.nupkg.sha512",
+    "/home/biruk/.nuget/packages/system.codedom/6.0.0/system.codedom.6.0.0.nupkg.sha512",
+    "/home/biruk/.nuget/packages/system.diagnostics.eventlog/6.0.0/system.diagnostics.eventlog.6.0.0.nupkg.sha512",
+    "/home/biruk/.nuget/packages/system.management/6.0.1/system.management.6.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

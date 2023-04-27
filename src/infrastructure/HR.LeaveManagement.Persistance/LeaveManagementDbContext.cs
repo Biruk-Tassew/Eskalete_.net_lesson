@@ -1,36 +1,28 @@
 ﻿using HR.LeaveManagement.Domain;
-using Microsoft.EntityFrameworkCore;
 using HR.LeaveManagement.Domain.Common;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
-namespace HR.LeaveManagement.Persistance;
-public class LeaveManagementDbContext : DbContext
+namespace HR.LeaveManagement.Persistence
 {
-    public LeaveManagementDbContext(DbContextOptions<LeaveManagementDbContext> options) : base(options)
+    public class LeaveManagementDbContext : AuditableDbContext
     {
-    
-    }
-
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        modelBuilder.ApplyConfigurationsFromAssembly(typeof(LeaveManagementDbContext).Assembly);
-    }
-
-    public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
-    {
-        foreach (var entry in ChangeTracker.Entries<BaseDomainEntity>())
+        public LeaveManagementDbContext(DbContextOptions<LeaveManagementDbContext> options)
+            : base(options)
         {
-            entry.Entity.LastModifiedDate = DateTime.Now;
-
-            if (entry.State == EntityState.Added)
-            {
-                entry.Entity.DateCreated = DateTime.Now;
-            }
         }
 
-        return base.SaveChangesAsync(cancellationToken);
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(LeaveManagementDbContext).Assembly);
+        }
+
+        public DbSet<LeaveRequest> LeaveRequests { get; set; }
+        public DbSet<LeaveType> LeaveTypes { get; set; }
+        public DbSet<LeaveAllocation> LeaveAllocations { get; set; }
     }
-    
-    public DbSet<LeaveType> LeaveTypes;
-    public DbSet<LeaveRequest> LeaveRequests;
-    public DbSet<LeaveAllocation> LeaveAllocations;
 }

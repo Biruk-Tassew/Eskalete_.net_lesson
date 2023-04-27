@@ -1,0 +1,5 @@
+/home/biruk/Desktop/Classes/A2SV/Internship/net/lesson/src/core/HR.LeaveManagement.Application/obj/Debug/net6.0/HR.LeaveManagement.Application.csproj.AssemblyReference.cache
+/home/biruk/Desktop/Classes/A2SV/Internship/net/lesson/src/core/HR.LeaveManagement.Application/obj/Debug/net6.0/HR.LeaveManagement.Application.GeneratedMSBuildEditorConfig.editorconfig
+/home/biruk/Desktop/Classes/A2SV/Internship/net/lesson/src/core/HR.LeaveManagement.Application/obj/Debug/net6.0/HR.LeaveManagement.Application.AssemblyInfoInputs.cache
+/home/biruk/Desktop/Classes/A2SV/Internship/net/lesson/src/core/HR.LeaveManagement.Application/obj/Debug/net6.0/HR.LeaveManagement.Application.AssemblyInfo.cs
+/home/biruk/Desktop/Classes/A2SV/Internship/net/lesson/src/core/HR.LeaveManagement.Application/obj/Debug/net6.0/HR.LeaveManagement.Application.csproj.CoreCompileInputs.cache

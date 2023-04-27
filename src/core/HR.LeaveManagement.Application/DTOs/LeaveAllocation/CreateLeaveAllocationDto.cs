@@ -1,10 +1,13 @@
-﻿
-namespace HR.LeaveManagement.Application.DTOs.LeaveAllocation;
-public class CreateLeaveAllocationDto : ILeaveAllocationDto
+﻿using HR.LeaveManagement.Application.DTOs.Common;
+using HR.LeaveManagement.Application.DTOs.LeaveAllocation;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace HR.LeaveManagement.Application.DTOs.LeaveAllocation
 {
-    public int NumberOfDays {get; set;}
-    public int LeaveTypeId {get; set;}
-    public int Period {get; set;}
-
-
+    public class CreateLeaveAllocationDto
+    {
+        public int LeaveTypeId { get; set; }
+    }
 }

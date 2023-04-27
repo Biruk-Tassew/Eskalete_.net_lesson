@@ -6,5 +6,5 @@ using MediatR;
 namespace HR.LeaveManagement.Application.Features.LeaveTypes.Requests.Commands;
 public class CreateLeaveTypeCommand : IRequest<BaseCommandResponse>
 {
-    public CreateLeaveTypeDto CreateLeaveTypeDto{ get; internal set; }
+    public CreateLeaveTypeDto CreateLeaveTypeDto{ get; set; }
 }

@@ -7,4 +7,5 @@ namespace HR.LeaveManagement.Application.Features.LeaveRequests.Requests.Command
 public class DeleteLeaveRequestCommand : IRequest<Unit>
 {
     public DeleteLeaveRequestDto DeleteLeaveRequestDto{ get; set; }
+    public int Id { get; set; }
 }

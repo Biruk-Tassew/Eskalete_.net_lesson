@@ -1,13 +1,16 @@
-﻿using System;
-using HR.LeaveManagement.Application.DTOs.Common;
-using HR.LeaveManagement.Application.DTOs.LeaveType;
+﻿using HR.LeaveManagement.Application.DTOs.Common;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace HR.LeaveManagement.Application.DTOs.LeaveRequest;
-public class UpdateLeaveRequestDto : BaseDto, ILeaveRequestDto
+namespace HR.LeaveManagement.Application.DTOs.LeaveRequest
 {
-    public DateTime startDate {get; set;}
-    public DateTime endDate {get; set;}
-    public int LeaveTypeId {get; set;}
-    public string? RequestComment {get; set;}
-    public bool Cancelled {get; set;}
+    public class UpdateLeaveRequestDto : BaseDto, ILeaveRequestDto
+    {
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+        public int LeaveTypeId { get; set; }
+        public string RequestComments { get; set; }
+        public bool Cancelled { get; set; }
+    }
 }

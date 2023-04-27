@@ -1,11 +1,14 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace HR.LeaveManagement.Application.Responses;
-
-public class BaseCommandResponse 
+namespace HR.LeaveManagement.Application.Responses
 {
-    public int Id {get; set;}
-    public bool Success{get; set;}
-    public string? Message {set; get;}
-    public List<string>? Errors {get; set;}
-
+    public class BaseCommandResponse
+    {
+        public int Id { get; set; }
+        public bool Success { get; set; } = true;
+        public string Message { get; set; }
+        public List<string> Errors { get; set; }
+    }
 }

@@ -1,12 +1,19 @@
-using HR.LeaveManagement.Application.Contracts.Persistance;
+﻿using HR.LeaveManagement.Application.Contracts.Persistence;
 using HR.LeaveManagement.Domain;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace HR.LeaveManagement.Persistance.Repository;
-public class LeaveTypeRepository : GenericRepository<LeaveType>, ILeaveTypeRepository
+namespace HR.LeaveManagement.Persistence.Repositories
 {
-    private readonly LeaveManagementDbContext _dbContext;
-    public LeaveTypeRepository(LeaveManagementDbContext dbContext) : base(dbContext)
+    public class LeaveTypeRepository : GenericRepository<LeaveType>, ILeaveTypeRepository
     {
-        _dbContext = dbContext;
+        private readonly LeaveManagementDbContext _dbContext;
+
+        public LeaveTypeRepository(LeaveManagementDbContext dbContext) : base(dbContext)
+        {
+            _dbContext = dbContext;
+        }
     }
 }
+ 

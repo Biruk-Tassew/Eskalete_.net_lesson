@@ -6,4 +6,5 @@ namespace HR.LeaveManagement.Application.Features.LeaveTypes.Requests.Commands;
 public class DeleteLeaveTypeCommand : IRequest<Unit>
 {
     public DeleteLeaveTypeDto DeleteLeaveTypeDto{ get; set; }
+    public int Id { get;  set; }
 }
